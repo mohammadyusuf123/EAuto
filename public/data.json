@@ -4,7 +4,8 @@
       "name": "Front brake disc caliper",
       "seller": "Honda",
       "price": 450,
-      "stock": 20,
+      "availablequantity": 120,
+      "minquantity":45,
       "ratings": 4,
       "description":"Original Hondas disc calipers are manufactured with sophistication to provide you with greatest comfort and satisfaction while driving your motorcycle",
       "img": "https://i.ibb.co/T2Mtqx4/original-honda-front-brake-disc-caliper-for-cb-hornet-160-r-153-200x.webp"
@@ -14,7 +15,8 @@
       "name": "Disc plate for ktm duke",
       "seller": "KTM",
       "price": 196,
-      "stock": 19,
+      "availablequantity": 159,
+      "minquantity":65,
       "ratings": 5,
       "description":"Disc plates transfers the resistance force applied by the brakes to the wheels resulting in slowing down of your motorcycle or bike engine" ,
       "img": "https://i.ibb.co/dWy2Qy1/star-front-brake-disc-plate-for-ktm-duke-390-rc-911-200x.webp"
@@ -24,7 +26,8 @@
       "name": "Speedometer for bajaj boxer",
       "seller": "Bajaj",
       "price": 245,
-      "stock": 20,
+      "availablequantity": 200,
+      "minquantity":115,
       "ratings": 4,
       "description": "Speedometer to measure and display the speed of your vehicle instantaneously  your motorcycle or bike engine to ride safely",
       "img": "https://i.ibb.co/7NX7gB3/minda-analog-speedometer-for-bajaj-boxer-100-682-200x.webp"
@@ -34,7 +37,8 @@
       "name": "Bajaj  carburetor for discover 125",
       "seller": "Bajaj",
       "price": 229,
-      "stock": 10,
+      "availablequantity": 134,
+      "minquantity":119,
       "ratings": 5,
       "description": "Bajaj orginal precision Carburetor are designed to blend fuel and air in the correct ratio across the dynamic.",
       "img": "https://i.ibb.co/MBrHJB3/bajaj-original-bike-carburetor-for-discover-125-st-964-200x.webp"
@@ -44,7 +48,8 @@
       "name": "Petrol tank for yamaha-rx100",
       "seller": "Yamaha",
       "price": 287,
-      "stock": 11,
+      "availablequantity": 111,
+      "minquantity":55,
       "ratings": 4,
       "description": " Ensons superior finish petrol tank that fits your bike perfectly and makes your bike brand new again",
       "img": "https://i.ibb.co/RQGmT1k/ensons-petrol-tank-for-yamaha-rx100-rx135-rxg-blackgolden-189-200x.webp"
@@ -54,7 +59,8 @@
       "name": "Silencer for Suzuki gxs",
       "seller": "Suzuki",
       "price": 138,
-      "stock": 19,
+      "availablequantity": 199,
+      "minquantity":105,
       "ratings": 3,
       "description":"Suzuki superior finish silencer (exhaust) that fits your bike perfectly and makes your bike brand new again",
       "img": "https://i.ibb.co/WWByMZd/silencer-for-hero-splendor-old-model-570-200x.webp"
@@ -64,8 +70,9 @@
       "name": "Head light set for hero glamour",
       "seller": "Hero",
       "price": 226,
-      "stock": 1,
-      "ratings": 4,
+      "availablequantity": 345,
+      "minquantity":305,  
+       "ratings": 4,
       "description": "Mukut's aesthetically built Front Disc Brake Master Cylinder Assembly for reliable and smooth braking for your bikes",
       "img": "https://i.ibb.co/tcsFRT7/lumax-head-light-set-for-hero-glamour-fi-old-model-722-200x.webp"
     },
@@ -74,8 +81,9 @@
       "name": "Suspension rear for ktm duke",
       "seller": "KTM",
       "price": 226,
-      "stock": 1,
-      "ratings": 4,
+      "availablequantity": 651,
+   "minquantity":175,   
+    "ratings": 4,
       "description": "Gabriel shock absorber offers a comfortable ride & required handling behaviour to your motorcycle or bike engine ride maximum speed",
       "img": "https://i.ibb.co/bzWL7Nw/wp-suspension-rear-mono-shock-absorber-for-ktm-duke-390-rc-adjustable-855-200x.webp"
     },
@@ -84,8 +92,9 @@
       "name": "Rolon chain sprocket kit for yamaha sz",
       "seller": "Yamaha",
       "price": 226,
-      "stock": 1,
-      "ratings": 4,
+      "availablequantity": 431,
+   "minquantity":165,    
+   "ratings": 4,
       "description":"Genuine Heavy DUTY ROLON Chain Sprocket kit to provide a secure & tension free ride",
       "img": "https://i.ibb.co/hK2mYHc/rolon-chain-sprocket-kit-for-yamaha-sz-szr-szx-745-200x.webp"
     }

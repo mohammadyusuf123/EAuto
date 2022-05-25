@@ -10,6 +10,7 @@ import Home from './Components/Home/Home';
 import Login from './Components/Login/Login';
 import Navbar from './Components/Navbar/Navbar';
 import NotFound from './Components/NotFound/NotFound';
+import Orders from './Components/Orders/Orders';
 import Profile from './Components/Profile/Profile';
 import Register from './Components/Register/Register';
 import RequireAuth from './Components/RequireAuth/RequireAuth';
@@ -25,6 +26,9 @@ function App() {
      <CheckOut></CheckOut>
    </RequireAuth>}></Route>
    <Route path='/blog' element={<Blog></Blog>}></Route>
+   <Route path='/orders' element={<RequireAuth>
+     <Orders></Orders>
+   </RequireAuth>}></Route>
    <Route path='/login' element={<Login></Login>}></Route>
    <Route path='/register' element={<Register></Register>}></Route>
    <Route path='/profile' element={<Profile></Profile>}></Route>

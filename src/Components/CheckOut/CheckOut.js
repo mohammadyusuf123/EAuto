@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 const CheckOut = () => {
     const{partsId}=useParams()
+    const navigate=useNavigate()
     const [parts,setParts]=useState({})
     const [user] = useAuthState(auth);
+    const handleOrder=()=>{
+        navigate('/orders')
+    }
     useEffect(()=>{
         const url=`http://localhost:2000/parts/${partsId}`
         fetch(url)
@@ -27,7 +31,7 @@ const CheckOut = () => {
     <h2 class="card-title text-primary">{parts.name}</h2>
     <p><strong>Seller</strong>:{parts.seller}</p>
     <p><strong>Price</strong>:${parts.price}</p>
-    <p><strong>Stock</strong>:{parts.stock}</p>
+    <p><strong>Available Quantity</strong>:{parts.availablequantity}</p>
     <p><strong>Descriptions</strong>:{parts.description}</p>
     <p><strong>Ratting</strong>:<div class="rating py-5">
   <input type="radio" name="rating-1" class="mask mask-star" />
@@ -37,7 +41,7 @@ const CheckOut = () => {
   <input type="radio" name="rating-1" class="mask mask-star" />
 </div></p>
     <div class="card-actions">
-      <button   class="btn btn-primary  btn-xl text-white">Order Now</button>
+      <button  onClick={handleOrder}  class="btn btn-primary  btn-xl text-white">Order Now</button>
     </div>
   </div>
 </div>

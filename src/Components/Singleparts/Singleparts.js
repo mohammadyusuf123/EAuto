@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  faCartShopping } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from 'react-router-dom';
 const Singleparts = ({singleParts}) => {
-    const{name,seller,price,img,description,ratings,stock,_id}=singleParts
+    const{name,seller,price,img,description,ratings,stock,_id,availablequantity}=singleParts
     const navigate=useNavigate()
     const handleOrder=(id)=>{
         navigate(`/parts/${id}`)
@@ -18,7 +18,7 @@ const Singleparts = ({singleParts}) => {
     <h2 class="card-title text-primary">{name}</h2>
     <p><strong>Seller</strong>:{seller}</p>
     <p><strong>Price</strong>:${price}</p>
-    <p><strong>Stock</strong>:{stock}</p>
+    <p><strong>Available Quantity</strong>:{availablequantity}</p>
     <p><strong>Descriptions</strong>:{description}</p>
     <p><strong>Ratting</strong>:<div class="rating py-5">
   <input type="radio" name="rating-1" class="mask mask-star" />
