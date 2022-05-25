@@ -1,22 +1,37 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
+import {  toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import auth from '../../firebase.init';
 const Orders = () => {
   const [user] = useAuthState(auth);
-    const { register, formState: { errors } , handleSubmit } = useForm();
+    const { register, formState: { errors } , handleSubmit,reset } = useForm();
     const navigate=useNavigate()
     const location=useLocation()
     let from = location.state?.from?.pathname || "/";
      const onSubmit=(data)=>{
-        const email=data.email;
-        const name=data.name;
-        const num=data.number;
-        const parts=data.parts;
-        const quantity=data.quantity;
-        const user=[email,name,num,quantity,parts]
-        console.log(user)
+       
+         const order={
+          email:data.email,
+          name:data.name,
+          num:data.number,
+          parts:data.parts,
+          quantity:data.quantity,
+         }
+         axios.post('http://localhost:2000/order',order)
+         .then(response=>{
+           console.log(response)
+             const{data}=response
+             if(data.insertedId){
+                 toast('Your Order is Booked!!!!')
+                 reset()
+        
+             }
+         })
+       
     }
     return (
         <div>

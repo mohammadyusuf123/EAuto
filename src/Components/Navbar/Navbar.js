@@ -26,8 +26,7 @@ const Navbar = () => {
       <li><Link to='/contact'>Contact us</Link></li>
       {
         user&&<>
-         <li><Link to='/orders'>My Orders</Link></li>
-         <li><Link to='/review'>Add Review</Link></li>
+         <li><Link to='/order'>My Orders</Link></li>
          <li><Link to='/profile'>Profile</Link></li>
         
         </>
@@ -60,8 +59,7 @@ const Navbar = () => {
       <li><Link to='/contact'>Contact us</Link></li>
       {
         user&&<>
-         <li><Link to='/orders'>My Orders</Link></li>
-         <li><Link to='/review'>Add Review</Link></li>
+         <li><Link to='/order'>My Orders</Link></li>
          <li><Link to='/profile'>Profile</Link></li>
         
         </>
