@@ -1,0 +1,92 @@
+[
+    {
+      "id": "124e13b9-2d54-4b2f-a74d-a77b362d6ead",
+      "name": "Front brake disc caliper",
+      "seller": "Honda",
+      "price": 450,
+      "stock": 20,
+      "ratings": 4,
+      "description":"Original Hondas disc calipers are manufactured with sophistication to provide you with greatest comfort and satisfaction while driving your motorcycle",
+      "img": "https://i.ibb.co/T2Mtqx4/original-honda-front-brake-disc-caliper-for-cb-hornet-160-r-153-200x.webp"
+    },
+    {
+      "id": "13cbc7ed-a61b-4883-9d42-82d7d8642b86",
+      "name": "Disc plate for ktm duke",
+      "seller": "KTM",
+      "price": 196,
+      "stock": 19,
+      "ratings": 5,
+      "description":"Disc plates transfers the resistance force applied by the brakes to the wheels resulting in slowing down of your motorcycle or bike engine" ,
+      "img": "https://i.ibb.co/dWy2Qy1/star-front-brake-disc-plate-for-ktm-duke-390-rc-911-200x.webp"
+    },
+    {
+      "id": "307f166f-1d04-4573-bc37-2f461ea9d4f7",
+      "name": "Speedometer for bajaj boxer",
+      "seller": "Bajaj",
+      "price": 245,
+      "stock": 20,
+      "ratings": 4,
+      "description": "Speedometer to measure and display the speed of your vehicle instantaneously  your motorcycle or bike engine to ride safely",
+      "img": "https://i.ibb.co/7NX7gB3/minda-analog-speedometer-for-bajaj-boxer-100-682-200x.webp"
+    },
+    {
+      "id": "4bf9798f-63bc-4a83-b0c6-6a3b816fe922",
+      "name": "Bajaj  carburetor for discover 125",
+      "seller": "Bajaj",
+      "price": 229,
+      "stock": 10,
+      "ratings": 5,
+      "description": "Bajaj orginal precision Carburetor are designed to blend fuel and air in the correct ratio across the dynamic.",
+      "img": "https://i.ibb.co/MBrHJB3/bajaj-original-bike-carburetor-for-discover-125-st-964-200x.webp"
+    },
+    {
+      "id": "9496d72b-04ec-41f8-9bc3-0a7c9697be8e",
+      "name": "Petrol tank for yamaha-rx100",
+      "seller": "Yamaha",
+      "price": 287,
+      "stock": 11,
+      "ratings": 4,
+      "description": " Ensons superior finish petrol tank that fits your bike perfectly and makes your bike brand new again",
+      "img": "https://i.ibb.co/RQGmT1k/ensons-petrol-tank-for-yamaha-rx100-rx135-rxg-blackgolden-189-200x.webp"
+    },
+    {
+      "id": "6e5593d3-557b-43cf-8dab-a5140faedfb0",
+      "name": "Silencer for Suzuki gxs",
+      "seller": "Suzuki",
+      "price": 138,
+      "stock": 19,
+      "ratings": 3,
+      "description":"Suzuki superior finish silencer (exhaust) that fits your bike perfectly and makes your bike brand new again",
+      "img": "https://i.ibb.co/WWByMZd/silencer-for-hero-splendor-old-model-570-200x.webp"
+    },
+    {
+      "id": "9c0c13c2-54e4-4001-809b-afbd9d84037d",
+      "name": "Head light set for hero glamour",
+      "seller": "Hero",
+      "price": 226,
+      "stock": 1,
+      "ratings": 4,
+      "description": "Mukut's aesthetically built Front Disc Brake Master Cylinder Assembly for reliable and smooth braking for your bikes",
+      "img": "https://i.ibb.co/tcsFRT7/lumax-head-light-set-for-hero-glamour-fi-old-model-722-200x.webp"
+    },
+    {
+      "id": "9c0c13c2-54e4-4001-809b-afbd9d84037d",
+      "name": "Suspension rear for ktm duke",
+      "seller": "KTM",
+      "price": 226,
+      "stock": 1,
+      "ratings": 4,
+      "description": "Gabriel shock absorber offers a comfortable ride & required handling behaviour to your motorcycle or bike engine ride maximum speed",
+      "img": "https://i.ibb.co/bzWL7Nw/wp-suspension-rear-mono-shock-absorber-for-ktm-duke-390-rc-adjustable-855-200x.webp"
+    },
+    {
+      "id": "9c0c13c2-54e4-4001-809b-afbd9d84037d",
+      "name": "Rolon chain sprocket kit for yamaha sz",
+      "seller": "Yamaha",
+      "price": 226,
+      "stock": 1,
+      "ratings": 4,
+      "description":"Genuine Heavy DUTY ROLON Chain Sprocket kit to provide a secure & tension free ride",
+      "img": "https://i.ibb.co/hK2mYHc/rolon-chain-sprocket-kit-for-yamaha-sz-szr-szx-745-200x.webp"
+    }
+]
