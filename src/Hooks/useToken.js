@@ -6,7 +6,7 @@ const useToken=user=>{
     useEffect(()=>{
 const getToken=async()=>{
     const email=user?.user.email
-    console.log(email)
+
     if(email){
         const{data}=await axios.post('http://localhost:2000/login',{email});
     setToken(data)

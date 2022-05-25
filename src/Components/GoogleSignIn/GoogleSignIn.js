@@ -9,7 +9,7 @@ const GoogleSignIn = () => {
    
     const navigate=useNavigate()
     const location=useLocation()
-    const[token]=useToken(user)
+    // const[token]=useToken(user)
     let from = location.state?.from?.pathname || "/";
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
     
@@ -23,7 +23,7 @@ const GoogleSignIn = () => {
       if (loading) {
         return <Loading></Loading>
       }
-      if (token) {
+      if (user) {
           navigate(from, { replace: true });
       }
     return (

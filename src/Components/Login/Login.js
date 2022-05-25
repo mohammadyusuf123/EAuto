@@ -8,13 +8,14 @@ import Loading from '../Loading/Loading';
 import GoogleSignIn from '../GoogleSignIn/GoogleSignIn';
 import { useForm } from 'react-hook-form';
 import useToken from '../../Hooks/useToken';
+import axios from 'axios';
 
 const Login = () => {
     const { register, formState: { errors } , handleSubmit } = useForm();
       const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
       const navigate=useNavigate()
       const location=useLocation()
-      const[token]=useToken(user)
+      //  const[token]=useToken(user)
       let from = location.state?.from?.pathname || "/";
      const [
          signInWithEmailAndPassword,
@@ -22,13 +23,22 @@ const Login = () => {
          loading,
          error,
        ] = useSignInWithEmailAndPassword(auth);
-       const onSubmit=(data)=>{
-          const email=data.email;
-          const password=data.password;
-           signInWithEmailAndPassword(email,password)
-          // const{data}=await axios.post('https://pacific-ridge-30503.herokuapp.com/login',{email});
-          // console.log(data)
-          //  localStorage.setItem("accessToken",data)
+       const onSubmit=async(data)=>{
+
+        const gEmail=data.email
+        const password=data.password;
+         await signInWithEmailAndPassword( gEmail,password)
+
+         const email={
+           email:data.email
+         }
+         
+           const{token}=await axios.post('http://localhost:2000/login',email)
+           .then(response=>{
+            localStorage.setItem("accessToken",response.data)
+            navigate(from, { replace: true })
+           })
+          
           
            
   
@@ -51,8 +61,8 @@ const Login = () => {
       if(loading){
           return<Loading></Loading>
       }
-     if(token){
-      navigate(from, { replace: true })
+     if(user){
+      
      }
       if (error) {
           return (

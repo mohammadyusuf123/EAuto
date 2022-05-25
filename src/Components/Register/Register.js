@@ -1,7 +1,8 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import useToken from '../../Hooks/useToken';
 import GoogleSignIn from '../GoogleSignIn/GoogleSignIn';
@@ -20,11 +21,13 @@ const Register = () => {
     const handleLogIn=()=>{
         navigate('/login')
     }
-    const[token]=useToken(user)
-    const onSubmit=(data)=>{
-        console.log(data)
+    // const[token]=useToken(user)
+    const location=useLocation()
+    let from = location.state?.from?.pathname || "/";
+    
+    const onSubmit=async(data)=>{
         const name=data.name;
-        const email=data.email;
+        const rEmail=data.email;
         const password=data.password;
         const confirmPassword=data.confirmPassword;
         if(password!==confirmPassword){
@@ -36,10 +39,20 @@ const Register = () => {
             setError("Password must be 6 Character")
             return;
         }
-        createUserWithEmailAndPassword(email,password)
+        await createUserWithEmailAndPassword( rEmail,password)
+
+        const email={
+          email:data.email
+        }
+        
+          const{token}=await axios.post('http://localhost:2000/login',email)
+          .then(response=>{
+           localStorage.setItem("accessToken",response.data)
+           navigate(from, { replace: true })
+          })
 
     }
-    if(token){
+    if(user){
         navigate('/')
     }
     if(loading){
