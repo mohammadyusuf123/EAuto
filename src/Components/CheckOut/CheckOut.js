@@ -5,6 +5,7 @@ import auth from '../../firebase.init';
 
 const CheckOut = () => {
     const{partsId}=useParams()
+    console.log(partsId)
     const navigate=useNavigate()
     const [parts,setParts]=useState({})
     const [user] = useAuthState(auth);

@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import useParts from '../../Hooks/useParts';
-
+import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
+import auth from '../../firebase.init';
 const Orders = () => {
-  const[parts,setParts]=useParts()
+  const [user] = useAuthState(auth);
     const { register, formState: { errors } , handleSubmit } = useForm();
     const navigate=useNavigate()
     const location=useLocation()
@@ -13,8 +13,9 @@ const Orders = () => {
         const email=data.email;
         const name=data.name;
         const num=data.number;
+        const parts=data.parts;
         const quantity=data.quantity;
-        const user=[email,name,num,quantity]
+        const user=[email,name,num,quantity,parts]
         console.log(user)
     }
     return (
@@ -29,7 +30,7 @@ const Orders = () => {
   <label class="label">
     <span class="label-text">Name</span>
   </label>
-  <input type="text" placeholder="Your Full Name" 
+  <input type="text" value={user?.displayName} placeholder="Your Full Name" 
   class="input input-bordered w-full max-w-xs" 
   {...register("name",{
     required: {
@@ -47,7 +48,7 @@ const Orders = () => {
   <label class="label">
     <span class="label-text">Email</span>
   </label>
-  <input type="email" placeholder="Your Email" 
+  <input type="email" value={user?.email} placeholder="Your Email" 
   class="input input-bordered w-full max-w-xs" 
   {...register("email",{
     required: {
@@ -87,11 +88,29 @@ const Orders = () => {
    
   </label>
 </div>
+<div class="form-control w-full max-w-xs">
+  <label class="label">
+    <span class="label-text">Parts Name</span>
+  </label>
+  <input type="text" 
+  class="input input-bordered w-full max-w-xs" 
+  {...register("parts",{
+    required: {
+        value:true,
+        message:" Name is Required"
+  }
+  })}
+  />
+  <label class="label">
+  {errors.parts?.type === 'required' &&  <span class="label-text-alt text-red-500">{errors.parts.message}</span>}
+   
+  </label>
+</div>
     <div class="form-control w-full max-w-xs">
   <label class="label">
     <span class="label-text">Quantity</span>
   </label>
-  <input type="number" value={parts.name}
+  <input type="number" 
   class="input input-bordered w-full max-w-xs" 
   {...register("quantity",{
     required: {
@@ -109,6 +128,7 @@ const Orders = () => {
    
   </label>
 </div>
+
       
       
       <div className="pt-5"><input className=' btn w-full text-white  max-w-xs' type="submit"  value="Place Order"/></div>
