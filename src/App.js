@@ -17,6 +17,7 @@ import NotFound from './Components/NotFound/NotFound';
 import Orders from './Components/Orders/Orders';
 import Profile from './Components/Profile/Profile';
 import Register from './Components/Register/Register';
+import RequireAdmin from './Components/RequireAdmin/RequireAdmin';
 import RequireAuth from './Components/RequireAuth/RequireAuth';
 import Review from './Components/Review/Review';
 
@@ -41,7 +42,9 @@ function App() {
     <DashBoard></DashBoard>
    </RequireAuth>}><Route index element={<AllOrders></AllOrders>}></Route>
                  <Route path='review' element={<Review></Review>}></Route>
-                 <Route path='alluser' element={<AllUser></AllUser>}></Route>
+                 <Route path='alluser' element={<RequireAdmin>
+                   <AllUser></AllUser>
+                 </RequireAdmin>}></Route>
    </Route>
    <Route path='/login' element={<Login></Login>}></Route>
    <Route path='/register' element={<Register></Register>}></Route>
