@@ -42,18 +42,18 @@ const Register = () => {
         }
         await createUserWithEmailAndPassword( rEmail,password)
 
-        const email={
-          email:data.email
-        }
+        // const email={
+        //   email:data.email
+        // }
         
-          const{token}=await axios.post('http://localhost:2000/login',email)
-          .then(response=>{
-           localStorage.setItem("accessToken",response.data)
-           navigate(from, { replace: true })
-          })
+        //   const{token}=await axios.post('http://localhost:2000/login',email)
+        //   .then(response=>{
+        //    localStorage.setItem("accessToken",response.data)
+        //    navigate(from, { replace: true })
+        //   })
 
     }
-    if(user){
+    if(mail){
         navigate('/')
     }
     if(loading){

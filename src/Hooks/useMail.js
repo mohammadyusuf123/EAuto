@@ -18,6 +18,9 @@ const useMail=user=>{
         .then(response=>response.json())
          .then(data=>{
             console.log('data',data)
+            const accessToken=data.accessKey
+            localStorage.setItem('accessToken',accessToken)
+            setMail(accessToken)
         })
     
     }

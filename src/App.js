@@ -5,6 +5,7 @@ import './App.css';
 import About from './Components/About/About';
 import AllOrders from './Components/AllOders/AllOrders';
 import Allparts from './Components/Allparts/Allparts';
+import AllUser from './Components/AllUser/AllUser';
 import Blog from './Components/Blog/Blog';
 import CheckOut from './Components/CheckOut/CheckOut';
 import DashBoard from './Components/DashBoard/DashBoard';
@@ -40,6 +41,7 @@ function App() {
     <DashBoard></DashBoard>
    </RequireAuth>}><Route index element={<AllOrders></AllOrders>}></Route>
                  <Route path='review' element={<Review></Review>}></Route>
+                 <Route path='alluser' element={<AllUser></AllUser>}></Route>
    </Route>
    <Route path='/login' element={<Login></Login>}></Route>
    <Route path='/register' element={<Register></Register>}></Route>

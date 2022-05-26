@@ -7,7 +7,7 @@ import auth from '../../firebase.init';
 import Loading from '../Loading/Loading';
 import GoogleSignIn from '../GoogleSignIn/GoogleSignIn';
 import { useForm } from 'react-hook-form';
-import axios from 'axios';
+import useMail from '../../Hooks/useMail';
 
 const Login = () => {
     const { register, formState: { errors } , handleSubmit } = useForm();
@@ -21,25 +21,12 @@ const Login = () => {
          loading,
          error,
        ] = useSignInWithEmailAndPassword(auth);
+       const[mail]=useMail(user)
        const onSubmit=async(data)=>{
 
         const gEmail=data.email
         const password=data.password;
          await signInWithEmailAndPassword( gEmail,password)
-         
-
-         const email={
-           email:data.email
-         }
-         
-           const{token}=await axios.post('http://localhost:2000/login',email)
-           .then(response=>{
-            localStorage.setItem("accessToken",response.data)
-            navigate(from, { replace: true })
-           })
-          
-          
-           
   
       }
      
@@ -60,8 +47,8 @@ const Login = () => {
       if(loading){
           return<Loading></Loading>
       }
-     if(user){
-      
+     if(mail){
+      navigate(from, { replace: true })
      }
       if (error) {
           return (

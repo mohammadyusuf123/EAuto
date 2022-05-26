@@ -22,7 +22,7 @@ const GoogleSignIn = () => {
       if (loading) {
         return <Loading></Loading>
       }
-      if (user) {
+      if (mail) {
           navigate(from, { replace: true });
       }
     return (
