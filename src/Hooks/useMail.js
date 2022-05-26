@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
 
-const useToken=user=>{
-    const [token,setToken]=useState('')
+const useMail=user=>{
+    const[mail,setMail]=useState('')
     useEffect(()=>{
-        console.log('inside token',user)
-     const email=user?.user?.email
+        console.log('info',user)
+        const email=user?.user?.email
      const currentUser={email:email}
 
     if(email){
@@ -17,13 +17,11 @@ const useToken=user=>{
          })
         .then(response=>response.json())
          .then(data=>{
-            console.log(data)
+            console.log('data',data)
         })
     
     }
-
     },[user])
-    return[token]
-
+    return[mail]
 }
-export default useToken
+export default useMail;

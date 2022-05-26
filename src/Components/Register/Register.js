@@ -4,7 +4,7 @@ import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
-import useToken from '../../Hooks/useToken';
+import useMail from '../../Hooks/useMail';
 import GoogleSignIn from '../GoogleSignIn/GoogleSignIn';
 import Loading from '../Loading/Loading';
 
@@ -21,9 +21,10 @@ const Register = () => {
     const handleLogIn=()=>{
         navigate('/login')
     }
-    // const[token]=useToken(user)
+   
     const location=useLocation()
     let from = location.state?.from?.pathname || "/";
+    const[mail]=useMail(user)
     
     const onSubmit=async(data)=>{
         const name=data.name;

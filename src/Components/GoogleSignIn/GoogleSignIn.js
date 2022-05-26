@@ -4,15 +4,14 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Loading from '../Loading/Loading';
 import google from'../.../../../assets/img/google.webp'
-import useToken from '../../Hooks/useToken';
+import useMail from '../../Hooks/useMail';
 const GoogleSignIn = () => {
    
     const navigate=useNavigate()
     const location=useLocation()
-    // const[token]=useToken(user)
     let from = location.state?.from?.pathname || "/";
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
-    
+    const[mail]=useMail(user)
     if (error) {
         return (
           <div>

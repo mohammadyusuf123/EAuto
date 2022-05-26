@@ -7,7 +7,6 @@ import auth from '../../firebase.init';
 import Loading from '../Loading/Loading';
 import GoogleSignIn from '../GoogleSignIn/GoogleSignIn';
 import { useForm } from 'react-hook-form';
-import useToken from '../../Hooks/useToken';
 import axios from 'axios';
 
 const Login = () => {
@@ -15,7 +14,6 @@ const Login = () => {
       const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
       const navigate=useNavigate()
       const location=useLocation()
-      //  const[token]=useToken(user)
       let from = location.state?.from?.pathname || "/";
      const [
          signInWithEmailAndPassword,
@@ -28,6 +26,7 @@ const Login = () => {
         const gEmail=data.email
         const password=data.password;
          await signInWithEmailAndPassword( gEmail,password)
+         
 
          const email={
            email:data.email
