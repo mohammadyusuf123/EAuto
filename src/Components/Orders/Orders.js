@@ -6,8 +6,20 @@ import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import auth from '../../firebase.init';
+import { useQuery } from 'react-query';
+import Loading from '../Loading/Loading';
 const Orders = () => {
   const [user] = useAuthState(auth);
+  const{partsId}=useParams()
+  const{data:parts,isLoading}=useQuery(['quantity',partsId],()=>{
+    const url=`http://localhost:2000/parts/${partsId}`
+    fetch(url)
+    .then(response=>response.json())
+  })
+  console.log(parts)
+  if(isLoading){
+    <Loading></Loading>
+  }
     const { register, formState: { errors } , handleSubmit,reset } = useForm();
     const navigate=useNavigate()
     const location=useLocation()
