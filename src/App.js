@@ -8,10 +8,12 @@ import Allparts from './Components/Allparts/Allparts';
 import AllUser from './Components/AllUser/AllUser';
 import Blog from './Components/Blog/Blog';
 import CheckOut from './Components/CheckOut/CheckOut';
+import Adduser from './Components/DashBoard/AddUser/Adduser';
 import DashBoard from './Components/DashBoard/DashBoard';
 import Footer from './Components/Footer/Footer';
 import Home from './Components/Home/Home';
 import Login from './Components/Login/Login';
+import ManageOrders from './Components/ManageOrders/ManageOrders';
 import Navbar from './Components/Navbar/Navbar';
 import NotFound from './Components/NotFound/NotFound';
 import Orders from './Components/Orders/Orders';
@@ -40,10 +42,13 @@ function App() {
    </RequireAuth>}></Route>
    <Route path='dashboard' element={<RequireAuth>
     <DashBoard></DashBoard>
-   </RequireAuth>}><Route index element={<AllOrders></AllOrders>}></Route>
+   </RequireAuth>}><Route index element={<ManageOrders></ManageOrders>}></Route>
                  <Route path='review' element={<Review></Review>}></Route>
                  <Route path='alluser' element={<RequireAdmin>
                    <AllUser></AllUser>
+                 </RequireAdmin>}></Route>
+                 <Route path='adduser' element={<RequireAdmin>
+                   <Adduser></Adduser>
                  </RequireAdmin>}></Route>
    </Route>
    <Route path='/login' element={<Login></Login>}></Route>

@@ -16,7 +16,6 @@ const Orders = () => {
     fetch(url)
     .then(response=>response.json())
   })
-  console.log(parts)
   if(isLoading){
     <Loading></Loading>
   }

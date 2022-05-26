@@ -1,4 +1,4 @@
-import axios from 'axios';
+
 import React, { useState } from 'react';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
@@ -42,15 +42,6 @@ const Register = () => {
         }
         await createUserWithEmailAndPassword( rEmail,password)
 
-        // const email={
-        //   email:data.email
-        // }
-        
-        //   const{token}=await axios.post('http://localhost:2000/login',email)
-        //   .then(response=>{
-        //    localStorage.setItem("accessToken",response.data)
-        //    navigate(from, { replace: true })
-        //   })
 
     }
     if(mail){
