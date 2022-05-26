@@ -7,6 +7,7 @@ import AllOrders from './Components/AllOders/AllOrders';
 import Allparts from './Components/Allparts/Allparts';
 import Blog from './Components/Blog/Blog';
 import CheckOut from './Components/CheckOut/CheckOut';
+import DashBoard from './Components/DashBoard/DashBoard';
 import Footer from './Components/Footer/Footer';
 import Home from './Components/Home/Home';
 import Login from './Components/Login/Login';
@@ -16,6 +17,7 @@ import Orders from './Components/Orders/Orders';
 import Profile from './Components/Profile/Profile';
 import Register from './Components/Register/Register';
 import RequireAuth from './Components/RequireAuth/RequireAuth';
+import Review from './Components/Review/Review';
 
 function App() {
   return (
@@ -34,6 +36,11 @@ function App() {
    <Route path='/order' element={<RequireAuth>
     <AllOrders></AllOrders>
    </RequireAuth>}></Route>
+   <Route path='dashboard' element={<RequireAuth>
+    <DashBoard></DashBoard>
+   </RequireAuth>}><Route index element={<AllOrders></AllOrders>}></Route>
+                 <Route path='review' element={<Review></Review>}></Route>
+   </Route>
    <Route path='/login' element={<Login></Login>}></Route>
    <Route path='/register' element={<Register></Register>}></Route>
    <Route path='/profile' element={<Profile></Profile>}></Route>

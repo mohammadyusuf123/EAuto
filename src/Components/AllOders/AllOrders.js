@@ -34,6 +34,31 @@ const AllOrders = () => {
     return (
         <div>
             <h1>All order is:{orders.length}</h1>
+            <div class="overflow-x-auto">
+  <table class="table w-full">
+    {/* <!-- head --> */}
+    <thead>
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+        {
+            orders.map(a=> <tr>
+                <th></th>
+                <td>{a.name}</td>
+                <td>{a.email}</td>
+                <td>{orders.length}</td>
+              </tr>)
+        }
+     
+      
+    </tbody>
+  </table>
+</div>
         </div>
     );
 };

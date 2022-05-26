@@ -18,7 +18,7 @@ const Navbar = () => {
       <label tabindex="0" class="btn btn-ghost lg:hidden">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
       </label>
-      <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-primary rounded-box w-52">
+      <ul tabindex="1" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-primary rounded-box w-52">
       <li><Link to='/'>Home</Link></li>
       <li><Link to='/parts'>Parts</Link></li>
       <li><Link to='/blog'>Blog</Link></li>
@@ -28,6 +28,7 @@ const Navbar = () => {
         user&&<>
          <li><Link to='/order'>My Orders</Link></li>
          <li><Link to='/profile'>Profile</Link></li>
+         <li><Link to='/dashboard'>Dashboard</Link></li>
         
         </>
       }
@@ -61,23 +62,13 @@ const Navbar = () => {
         user&&<>
          <li><Link to='/order'>My Orders</Link></li>
          <li><Link to='/profile'>Profile</Link></li>
+         <li><Link to='/dashboard'>Dashboard</Link></li>
         
         </>
       }
 
 {
-    user?<div class="dropdown dropdown-end">
-    <label tabindex="0" class="btn btn-ghost btn-circle avatar">
-      <div class="w-10 rounded-full">
-        <img src={user?.photoURL}/>
-      </div>
-    </label>
-    <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-white rounded-box w-52">
-      <li>
-      </li>
-      <li><button onClick={handleSingOut} class="btn">Logout</button></li>
-    </ul>
-  </div>: <li><Link to='/login'>Log In</Link></li>
+    user?<button onClick={handleSingOut} class="btn btn-ghost">Logout</button>: <li><Link to='/login'>Log In</Link></li>
   }
 
       
@@ -86,6 +77,14 @@ const Navbar = () => {
   <div>
     
   </div>
+  
+  <div className='navbar-end'> <label tabindex="2" for="my-drawer-2" class="btn btn-ghost lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+      </label>
+  
+  
+  </div>
+
   
 
 </div>
