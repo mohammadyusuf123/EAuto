@@ -5,7 +5,7 @@ const useAdmin=user=>{
     const[loadingAdmin,setLoadingAdmin]=useState(true)
     const email=user?.email
     if(email){
-        fetch(`http://localhost:2000/admin/${email}`,{
+        fetch(`https://immense-plateau-89741.herokuapp.com/admin/${email}`,{
             method:'GET',
            headers:{
                'content-type':'application/json',

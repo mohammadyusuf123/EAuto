@@ -8,7 +8,7 @@ const useMail=user=>{
      const currentUser={email:email}
 
     if(email){
-         fetch(`http://localhost:2000/user/${email}`,{
+         fetch(`https://immense-plateau-89741.herokuapp.com/user/${email}`,{
             method:'PUT',
            headers:{
                'content-type':'application/json'

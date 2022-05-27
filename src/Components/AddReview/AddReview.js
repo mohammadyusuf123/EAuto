@@ -24,11 +24,11 @@ const AddReview = () => {
                 const user={
                     email:data.email,
                     name:data.name,
-                    occupation:data.occupation,
+                    descriptions:data.descriptions,
                     img:img
                 }
                 // Sent To DB
-              fetch('http://localhost:2000/parts',{
+              fetch('https://immense-plateau-89741.herokuapp.com/parts',{
                   method:'POST',
                  headers:{
                      'content-type':'application/json',
@@ -100,19 +100,19 @@ message:"Provide a Valid Email"}
 </div>
 <div class="form-control w-full max-w-xs">
 <label class="label">
-<span class="label-text">Comment</span>
+<span class="label-text ">Descriptions</span>
 </label>
-<input type="text" placeholder="Your comment" 
-class="input input-bordered w-full max-w-xs" 
-{...register("comment",{
+<input type="text" 
+class="input input-bordered input-lg w-full max-w-xs" 
+{...register("descriptions",{
 required: {
     value:true,
-    message:" comment is Required"
+    message:" Descriptions is Required"
 }
 })}
 />
 <label class="label">
-{errors.comment?.type === 'required' &&  <span class="label-text-alt text-red-500">{errors.comment.message}</span>}
+{errors.descriptions?.type === 'required' &&  <span class="label-text-alt text-red-500">{errors.descriptions.message}</span>}
 
 </label>
 </div>
@@ -135,7 +135,7 @@ required: {
 </label>
 </div>
 
-  <div className="pt-5"><input className=' btn w-full text-white  max-w-xs' type="submit"  value="Submit"/></div>
+  <div className="pt-5"><input className=' btn w-full text-white  max-w-xs' type="submit"  value="Add Review"/></div>
  
 </form>
 

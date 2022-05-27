@@ -11,7 +11,7 @@ const CheckoutForm = ({parts}) => {
   const{_id,price,name}=parts
  
   useEffect(() => {
-    fetch('http://localhost:2000/create-payment-intent', {
+    fetch('https://immense-plateau-89741.herokuapp.com/create-payment-intent', {
         method: 'POST',
         headers: {
             'content-type': 'application/json',
@@ -66,24 +66,24 @@ const CheckoutForm = ({parts}) => {
         setTransactionId(paymentIntent.id);
         setSuccess('Congrats!  payment is completed.')
         
-        //store payment on database
-        // const payment = {
-        //     order: _id,
-        //     transactionId: paymentIntent.id
-        // }
-        // fetch(`http://localhost:2000/payment/${_id}`, {
-        //     method: 'PATCH',
-        //     headers: {
-        //         'content-type': 'application/json',
-        //         'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-        //     },
-        //     body: JSON.stringify(payment)
-        // }).then(res=>res.json())
-        // .then(data => {
-        //   console.log(data)
-        //     setProcessing(false);
+        // store payment on database
+        const payment = {
+            order: _id,
+            transactionId: paymentIntent.id
+        }
+        fetch(`https://immense-plateau-89741.herokuapp.com/payment/${_id}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json',
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            },
+            body: JSON.stringify(payment)
+        }).then(res=>res.json())
+        .then(data => {
+          console.log(data)
+            setProcessing(false);
            
-        // })
+        })
 
     }
     }

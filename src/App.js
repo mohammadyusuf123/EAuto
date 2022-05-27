@@ -15,6 +15,7 @@ import Footer from './Components/Footer/Footer';
 import Home from './Components/Home/Home';
 import Login from './Components/Login/Login';
 import ManageOrders from './Components/ManageOrders/ManageOrders';
+import MyPortfolio from './Components/MyPortfolio/MyPortfolio';
 import Navbar from './Components/Navbar/Navbar';
 import NotFound from './Components/NotFound/NotFound';
 import Payment from './Components/Payment/Payment';
@@ -38,13 +39,14 @@ function App() {
      <Payment></Payment>
    </RequireAuth>}></Route>
    <Route path='/blog' element={<Blog></Blog>}></Route>
+   <Route path='/portfolio' element={<MyPortfolio></MyPortfolio>}></Route>
    <Route path='/order' element={<RequireAuth>
     <AllOrders></AllOrders>
    </RequireAuth>}></Route>
    <Route path='dashboard' element={<RequireAuth>
     <DashBoard></DashBoard>
-   </RequireAuth>}><Route index element={<ManageOrders></ManageOrders>}></Route>
-                 <Route path='review' element={<Review></Review>}></Route>
+   </RequireAuth>}><Route index element={<Review></Review>}></Route>
+                 <Route path='allorders' element={<ManageOrders></ManageOrders>}></Route>
                  <Route path='alluser' element={<RequireAdmin>
                    <AllUser></AllUser>
                  </RequireAdmin>}></Route>

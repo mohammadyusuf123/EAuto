@@ -12,7 +12,7 @@ const Orders = () => {
   const [user] = useAuthState(auth);
   const{partsId}=useParams()
   const{data:parts,isLoading}=useQuery(['quantity',partsId],()=>{
-    const url=`http://localhost:2000/parts/${partsId}`
+    const url=`https://immense-plateau-89741.herokuapp.com/parts/${partsId}`
     fetch(url)
     .then(response=>response.json())
   })
@@ -32,7 +32,7 @@ const Orders = () => {
           parts:data.parts,
           quantity:data.quantity,
          }
-         axios.post('http://localhost:2000/order',order)
+         axios.post('https://immense-plateau-89741.herokuapp.com/order',order)
          .then(response=>{
            console.log(response)
              const{data}=response

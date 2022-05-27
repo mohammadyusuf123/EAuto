@@ -3,7 +3,7 @@ import Admin from '../Admin/Admin';
 const AllUser = () => {
     const[users,setUsers]=useState([])
     useEffect(()=>{
-        fetch('http://localhost:2000/user',{
+        fetch('https://immense-plateau-89741.herokuapp.com/user',{
             method:'GET',
             headers:{
                 authorization:`Bearer ${localStorage.getItem('accessToken')}`
@@ -22,8 +22,8 @@ const AllUser = () => {
       <tr>
         <th></th>
         <th>Name</th>
-        <th>Email</th>
-        <th>Quantity</th>
+        <th>Status</th>
+        <th>Status</th>
       </tr>
     </thead>
     <tbody>

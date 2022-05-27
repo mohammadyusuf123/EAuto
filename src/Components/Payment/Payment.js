@@ -13,7 +13,7 @@ const Payment = () => {
     const [parts,setParts]=useState({})
     const{paymentId}=useParams()
     useEffect(()=>{
-        const url=`http://localhost:2000/payment/${paymentId}`
+        const url=`https://immense-plateau-89741.herokuapp.com/payment/${paymentId}`
         fetch(url)
         .then(response=>response.json())
         .then(data=>setParts(data))

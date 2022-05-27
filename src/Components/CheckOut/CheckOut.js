@@ -17,7 +17,7 @@ const CheckOut = () => {
     const[disable, setDisable] = useState(false)
     const [user] = useAuthState(auth);
     useEffect(()=>{
-        const url=`http://localhost:2000/parts/${partsId}`
+        const url=`https://immense-plateau-89741.herokuapp.com/parts/${partsId}`
         fetch(url)
         .then(response=>response.json())
         .then(data=>setParts(data))
@@ -48,7 +48,7 @@ else{
           quantity:data.quantity,
           productId:parts._id
          }
-         axios.post('http://localhost:2000/order',order)
+         axios.post('https://immense-plateau-89741.herokuapp.com/order',order)
          .then(response=>{
            console.log(response)
              const{data}=response

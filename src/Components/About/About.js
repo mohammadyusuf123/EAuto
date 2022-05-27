@@ -4,7 +4,7 @@ const About = () => {
     return (
         <div>
             <h1 className='text-2xl text-center text-info'>About</h1>
-            Headquartered in United States, the AutoPartsShop.com is a leading supplier of auto parts for the vehicles. TheAutopartShop distributes the auto parts in 48 states, within the US.
+            Headquartered in United States, the eAuto.com is a leading supplier of auto parts for the vehicles. TheAutopartShop distributes the auto parts in 48 states, within the US.
 
 TAPS is the industry leader in makes and models of parts sold to the consumers and fleets across the U.S. We ensure complete durability and compatibility of products; we have an upper hand over the automobile marketing industry. We have effectively established our name over the automobile part market with our trust and reliability over customers.
 

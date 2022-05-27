@@ -28,7 +28,7 @@ const Profile = () => {
                     img:img
                 }
                 // Sent To DB
-              fetch('http://localhost:2000/userInfo',{
+              fetch('https://immense-plateau-89741.herokuapp.com/userInfo',{
                   method:'POST',
                  headers:{
                      'content-type':'application/json',

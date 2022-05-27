@@ -20,7 +20,7 @@ const AllOrders = () => {
     const handleDelete=id=>{
       const proceed=window.confirm("Are you sure want to delete")
       if(proceed){
-       const url=`http://localhost:2000/order/${id}`
+       const url=`https://immense-plateau-89741.herokuapp.com/order/${id}`
        fetch(url,{
            method:'DELETE'     
        })
@@ -41,7 +41,7 @@ const AllOrders = () => {
     useEffect(()=>{
         const getAllOrders=async()=>{
             const email=user?.email
-            const url=`http://localhost:2000/order/${email}`;
+            const url=`https://immense-plateau-89741.herokuapp.com/order/${email}`;
            try{
             const{data}= await axios.get(url,{
                 headers:{

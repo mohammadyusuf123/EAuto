@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const Admin = ({user}) => {
     const{email,role}=user
     const makeAdmin=()=>{
-        fetch(`http://localhost:2000/user/admin/${email}`,{
+        fetch(`https://immense-plateau-89741.herokuapp.com/user/admin/${email}`,{
             method:'PUT',
             headers:{
                 authorization:`Bearer ${localStorage.getItem('accessToken')}`

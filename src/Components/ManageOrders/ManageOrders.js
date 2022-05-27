@@ -7,7 +7,7 @@ const ManageOrders = () => {
     const handleDelete=id=>{
         const proceed=window.confirm("Are you sure want to delete")
         if(proceed){
-         const url=`http://localhost:2000/order/${id}`
+         const url=`https://immense-plateau-89741.herokuapp.com/order/${id}`
          fetch(url,{
              method:'DELETE'     
          })
@@ -21,7 +21,7 @@ const ManageOrders = () => {
     }
 
     useEffect(()=>{
-        fetch('http://localhost:2000/order',{
+        fetch('https://immense-plateau-89741.herokuapp.com/order',{
             method:'GET',
         })
         .then(response=>response.json())
