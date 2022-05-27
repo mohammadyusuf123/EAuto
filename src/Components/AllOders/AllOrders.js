@@ -13,6 +13,10 @@ const AllOrders = () => {
         nevigate(`/payment/${id}`)
     }
     
+    const handleReview=()=>{
+        nevigate('/addreview')
+    }
+    
     const handleDelete=id=>{
       const proceed=window.confirm("Are you sure want to delete")
       if(proceed){
@@ -69,6 +73,7 @@ const AllOrders = () => {
     <th>Name</th>
     <th>Status</th>
     <th>Status</th>
+    <th>Add Review</th>
   </tr>
 </thead>
 <tbody>
@@ -80,6 +85,7 @@ const AllOrders = () => {
             <td><button  onClick={()=>handlePayment(order.productId
 )} class="btn btn-xs btn-success">Make Payment</button></td>
             <td><button  onClick={()=>handleDelete(order._id)} class="btn btn-xs btn-error">Delete</button></td>
+            <td><button  onClick={handleReview} class="btn btn-xs  btn-success">Review</button></td>
           </tr> )
        
     }

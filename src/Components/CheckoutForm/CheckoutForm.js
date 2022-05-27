@@ -67,22 +67,23 @@ const CheckoutForm = ({parts}) => {
         setSuccess('Congrats!  payment is completed.')
         
         //store payment on database
-        const payment = {
-            order: _id,
-            transactionId: paymentIntent.id
-        }
-        fetch(`http://localhost:2000/payment/${_id}`, {
-            method: 'PATCH',
-            headers: {
-                'content-type': 'application/json',
-                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-            },
-            body: JSON.stringify(payment)
-        }).then(res=>res.json())
-        .then(data => {
-            setProcessing(false);
+        // const payment = {
+        //     order: _id,
+        //     transactionId: paymentIntent.id
+        // }
+        // fetch(`http://localhost:2000/payment/${_id}`, {
+        //     method: 'PATCH',
+        //     headers: {
+        //         'content-type': 'application/json',
+        //         'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+        //     },
+        //     body: JSON.stringify(payment)
+        // }).then(res=>res.json())
+        // .then(data => {
+        //   console.log(data)
+        //     setProcessing(false);
            
-        })
+        // })
 
     }
     }

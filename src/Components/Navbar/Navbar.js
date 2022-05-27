@@ -24,7 +24,6 @@ const Navbar = () => {
       <li><Link to='/parts'>Parts</Link></li>
       <li><Link to='/blog'>Blog</Link></li>
       <li><Link to='/about'>About</Link></li>
-      <li><Link to='/contact'>Contact us</Link></li>
       {
         user&&<>
          <li><Link to='/order'>My Orders</Link></li>
@@ -58,7 +57,6 @@ const Navbar = () => {
       <li><Link to='/parts'>Parts</Link></li>
       <li><Link to='/blog'>Blog</Link></li>
       <li><Link to='/about'>About</Link></li>
-      <li><Link to='/contact'>Contact us</Link></li>
       {
         user&&<>
          <li><Link to='/order'>My Orders</Link></li>

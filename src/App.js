@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import './App.css';
 import About from './Components/About/About';
+import AddReview from './Components/AddReview/AddReview';
 import AllOrders from './Components/AllOders/AllOrders';
 import Allparts from './Components/Allparts/Allparts';
 import AllUser from './Components/AllUser/AllUser';
@@ -52,6 +53,7 @@ function App() {
                  </RequireAdmin>}></Route>
    </Route>
    <Route path='/login' element={<Login></Login>}></Route>
+   <Route path='/addreview' element={<AddReview></AddReview>}></Route>
    <Route path='/register' element={<Register></Register>}></Route>
    <Route path='/profile' element={<Profile></Profile>}></Route>
    <Route path='/about' element={<About></About>}></Route>
