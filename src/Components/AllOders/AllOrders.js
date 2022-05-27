@@ -9,7 +9,31 @@ const AllOrders = () => {
     const [user]=useAuthState(auth)
     const[orders,setOrders]=useState([])
     const nevigate=useNavigate()
-    console.log(orders)
+    const handlePayment=(id)=>{
+        nevigate(`/payment/${id}`)
+    }
+    
+    const handleDelete=id=>{
+      const proceed=window.confirm("Are you sure want to delete")
+      if(proceed){
+       const url=`http://localhost:2000/order/${id}`
+       fetch(url,{
+           method:'DELETE'     
+       })
+       .then(response=>response.json())
+       .then(data=>{
+           console.log(data)
+       })
+       const find=orders.filter(service=>service._id!==id)
+       setOrders(find)
+      }
+  }
+
+
+
+
+
+
     useEffect(()=>{
         const getAllOrders=async()=>{
             const email=user?.email
@@ -53,8 +77,9 @@ const AllOrders = () => {
             <th></th>
             <td>{order.email}</td>
             <td>{order.parts}</td>
-            <td><button  o class="btn btn-xs btn-success">Make Payment</button></td>
-            <td><button class="btn btn-xs btn-error">Delete</button></td>
+            <td><button  onClick={()=>handlePayment(order.productId
+)} class="btn btn-xs btn-success">Make Payment</button></td>
+            <td><button  onClick={()=>handleDelete(order._id)} class="btn btn-xs btn-error">Delete</button></td>
           </tr> )
        
     }

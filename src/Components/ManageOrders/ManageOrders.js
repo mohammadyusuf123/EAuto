@@ -4,12 +4,25 @@ import React, { useEffect, useState } from 'react';
 
 const ManageOrders = () => {
     const[orders,setOrders]=useState([])
+    const handleDelete=id=>{
+        const proceed=window.confirm("Are you sure want to delete")
+        if(proceed){
+         const url=`http://localhost:2000/order/${id}`
+         fetch(url,{
+             method:'DELETE'     
+         })
+         .then(response=>response.json())
+         .then(data=>{
+             console.log(data)
+         })
+         const find=orders.filter(service=>service._id!==id)
+         setOrders(find)
+        }
+    }
+
     useEffect(()=>{
         fetch('http://localhost:2000/order',{
             method:'GET',
-            headers:{
-                authorization:`Bearer ${localStorage.getItem('accessToken')}`
-            }
         })
         .then(response=>response.json())
         .then(data=>setOrders(data))
@@ -38,8 +51,8 @@ const ManageOrders = () => {
             <td>{order.email}</td>
             <td>{order.parts}</td>
             <td>{order.quantity}</td>
-            <td><button  o class="btn btn-xs btn-success">Shipped</button></td>
-            <td><button class="btn btn-xs btn-error">Delete</button></td>
+            <td><button  class="btn btn-xs btn-success">Shipped</button></td>
+            <td><button   onClick={()=>handleDelete(order._id)} class="btn btn-xs btn-error">Delete</button></td>
           </tr> )
        
     }

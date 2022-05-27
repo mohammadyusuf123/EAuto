@@ -27,11 +27,13 @@ const Singleparts = ({singleParts}) => {
   <input type="radio" name="rating-1" class="mask mask-star" />
   <input type="radio" name="rating-1" class="mask mask-star" />
 </div></p>
-    <div class="card-actions">
+<div class="card-actions">
       <button  onClick={()=>handleOrder(_id)} class="btn btn-primary  btn-xl text-white">Buy Now<FontAwesomeIcon icon={faCartShopping} ></FontAwesomeIcon></button>
     </div>
   </div>
+  
 </div>
+
         </div>
     );
 };

@@ -7,10 +7,6 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Adduser = () => {
   const imgApiKey='1fc30820906ea3fde7b24505d27eea71'
-    const{data:parts,isLoading}=useQuery('parts',()=>{
-    fetch('http://localhost:2000/parts').then(res=>res.json())
-      })
-      console.log(parts)
     const { register, formState: { errors } , handleSubmit} = useForm();
     const onSubmit= async data=>{
         console.log(data)
@@ -51,9 +47,6 @@ const Adduser = () => {
             
         })
     
-    }
-    if(isLoading){
-        return<Loading></Loading>
     }
     return (
         <div>

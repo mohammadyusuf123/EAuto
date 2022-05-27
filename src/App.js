@@ -16,7 +16,7 @@ import Login from './Components/Login/Login';
 import ManageOrders from './Components/ManageOrders/ManageOrders';
 import Navbar from './Components/Navbar/Navbar';
 import NotFound from './Components/NotFound/NotFound';
-import Orders from './Components/Orders/Orders';
+import Payment from './Components/Payment/Payment';
 import Profile from './Components/Profile/Profile';
 import Register from './Components/Register/Register';
 import RequireAdmin from './Components/RequireAdmin/RequireAdmin';
@@ -33,10 +33,10 @@ function App() {
    <Route path='/parts/:partsId' element={<RequireAuth>
      <CheckOut></CheckOut>
    </RequireAuth>}></Route>
-   <Route path='/blog' element={<Blog></Blog>}></Route>
-   <Route path='/orders' element={<RequireAuth>
-     <Orders></Orders>
+   <Route path='/payment/:paymentId' element={<RequireAuth>
+     <Payment></Payment>
    </RequireAuth>}></Route>
+   <Route path='/blog' element={<Blog></Blog>}></Route>
    <Route path='/order' element={<RequireAuth>
     <AllOrders></AllOrders>
    </RequireAuth>}></Route>
